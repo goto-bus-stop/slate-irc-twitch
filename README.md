@@ -3,6 +3,8 @@ slate-irc-twitch
 
 Twitch commands plugin for [slate-irc](https://github.com/slate/slate-irc).
 
+[![NPM](https://nodei.co/npm/slate-irc-twitch.png?compact=true)](https://nodei.co/npm/slate-irc-twitch)
+
 ## Usage
 
 ```javascript
