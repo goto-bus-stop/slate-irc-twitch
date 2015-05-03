@@ -1,5 +1,5 @@
 { "name": "slate-irc-twitch"
-, "version": "1.0.1"
+, "version": "1.0.2"
 , "description": "Twitch commands plugin for slate-irc."
 , "license": "MIT"
 , "keywords": [ "slate-irc", "twitch", "irc" ]
