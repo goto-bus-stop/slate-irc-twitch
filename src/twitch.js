@@ -86,7 +86,9 @@ export default function (opts = {}) {
     })
 
     if (opts.init) {
-      client.twitchinit()
+      client.on('motd', () => {
+        client.twitchinit()
+      })
     }
   }
 

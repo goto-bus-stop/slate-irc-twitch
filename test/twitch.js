@@ -19,6 +19,8 @@ describe('Basic Twitch IRC features', function () {
           done()
         })
       })
+
+      client.emit('motd')
     })
 
     it('sends a CAP REQ for tags if needed', done => {
@@ -30,6 +32,7 @@ describe('Basic Twitch IRC features', function () {
         strictEqual(line, 'CAP REQ :twitch.tv/commands twitch.tv/tags\r\n')
         done()
       })
+      client.emit('motd')
     })
 
   })

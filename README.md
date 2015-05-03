@@ -25,7 +25,7 @@ client.ban('#my_stream', 'annoying_user')
 Returns a plugin for .use() with `slate-irc`. Options:
 
  * init: Whether to send the twitchs-related CAP messages and the TWITCHCLIENT message
-   immediately. If true, you shouldn't call `twitchinit()` yourself. Defaults to false.
+   automatically. If true, you shouldn't call `twitchinit()` yourself. Defaults to false.
  * tags: Whether to ask for [tags](http://ircv3.net/specs/core/message-tags-3.2.html)
    in IRC messages. (Sends `CAP REQ :twitch.tv/tags`.) Defaults to false.
 
