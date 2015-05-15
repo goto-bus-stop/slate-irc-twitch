@@ -113,9 +113,10 @@ Enable subscriber-only mode.
 
 Disable subscriber-only mode.
 
-### client.timeout(channel, user)
+### client.timeout(channel, user, duration = 600)
 
-Times out a user. This will stop them from chatting for 10 or so minutes.
+Times out a user for `duration` seconds. This will stop them from chatting
+for the given amount of seconds; 10 minutes by default.
 
 ## Licence
 

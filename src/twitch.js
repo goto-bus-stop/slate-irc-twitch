@@ -80,8 +80,15 @@ export default function (opts = {}) {
       subscribersoff(channel, fn) {
         this.send(channel, `.subscribersoff`, fn)
       },
-      timeout(channel, username, fn) {
-        this.send(channel, `.timeout ${username}`, fn)
+      timeout(channel, username, duration, fn) {
+        // before 1.1.0, there was no `duration` parameter
+        if (typeof duration === 'function') {
+          fn = duration, duration = 600
+        }
+        else if (typeof duration === 'undefined') {
+          duration = 600
+        }
+        this.send(channel, `.timeout ${username} ${duration}`, fn)
       }
     })
 

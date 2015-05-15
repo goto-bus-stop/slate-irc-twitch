@@ -46,11 +46,24 @@ describe('Ban/Timeout moderation', function () {
       client.use(twitch())
 
       stream.on('data', line => {
-        strictEqual(line, 'PRIVMSG #channel :.timeout spammer\r\n')
+        strictEqual(line, 'PRIVMSG #channel :.timeout spammer 600\r\n')
         done()
       })
 
       client.timeout('#channel', 'spammer')
+    })
+
+    it('can use a variable timeout duration', done => {
+      let stream = PassThrough()
+      let client = irc(stream)
+      client.use(twitch())
+
+      stream.on('data', line => {
+        strictEqual(line, 'PRIVMSG #channel :.timeout spammer 1337\r\n')
+        done()
+      })
+
+      client.timeout('#channel', 'spammer', 1337)
     })
 
   })
