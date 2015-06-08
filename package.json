@@ -3,6 +3,7 @@
 , "description": "Twitch commands plugin for slate-irc."
 , "license": "MIT"
 , "keywords": [ "slate-irc", "twitch", "irc" ]
+, "repository": "goto-bus-stop/slate-irc-twitch"
 , "bugs": "https://github.com/goto-bus-stop/slate-irc-twitch/issues"
 , "author": "goto-bus-stop <rene@kooi.me>"
 , "main": "lib/twitch"
