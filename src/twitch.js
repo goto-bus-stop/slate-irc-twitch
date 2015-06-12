@@ -5,6 +5,8 @@ export default function (opts = {}) {
   const jtv = opts.jtv || 'jtv!jtv@jtv.tmi.twitch.tv'
   const match = opts.match || 'The moderators of this room are: '
 
+  opts = assign({ membership: true }, opts)
+
   return function twitch(client) {
     client.on('data', message => {
       if (message.command !== 'PRIVMSG') return
@@ -23,7 +25,10 @@ export default function (opts = {}) {
         })
       },
       twitchcap(fn) {
-        this.write('CAP REQ :twitch.tv/commands' + (opts.tags ? ' twitch.tv/tags' : ''), fn)
+        this.write('CAP REQ :twitch.tv/commands' +
+                     (opts.tags ? ' twitch.tv/tags' : '') +
+                     (opts.membership ? ' twitch.tv/membership' : '')
+                  , fn)
       },
       twitchclient(n, fn) {
         if (typeof n === 'function') [ fn, n ] = [ n, 4 ]

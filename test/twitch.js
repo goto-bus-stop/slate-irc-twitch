@@ -13,7 +13,7 @@ describe('Basic Twitch IRC features', function () {
       client.use(twitch({ init: true }))
 
       stream.once('data', line => {
-        strictEqual(line, 'CAP REQ :twitch.tv/commands\r\n')
+        strictEqual(line, 'CAP REQ :twitch.tv/commands twitch.tv/membership\r\n')
         stream.once('data', line => {
           strictEqual(line, 'TWITCHCLIENT 4\r\n')
           done()
@@ -26,7 +26,7 @@ describe('Basic Twitch IRC features', function () {
     it('sends a CAP REQ for tags if needed', done => {
       let stream = PassThrough()
       let client = irc(stream)
-      client.use(twitch({ init: true, tags: true }))
+      client.use(twitch({ init: true, tags: true, membership: false }))
 
       stream.once('data', line => {
         strictEqual(line, 'CAP REQ :twitch.tv/commands twitch.tv/tags\r\n')
