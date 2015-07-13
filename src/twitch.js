@@ -2,16 +2,14 @@ import assign from 'object-assign'
 
 export default function (opts = {}) {
 
-  const jtv = opts.jtv || 'jtv!jtv@jtv.tmi.twitch.tv'
   const match = opts.match || 'The moderators of this room are: '
 
   opts = assign({ membership: true }, opts)
 
   return function twitch(client) {
     client.on('data', message => {
-      if (message.command !== 'PRIVMSG') return
-      if (message.prefix !== jtv) return
-      if (message.trailing.indexOf(match) === 0) {
+      if (opts.tags?  (message.tags && message.tags['msg-id'] === 'room_mods')
+         : /* else */ (message.command === 'NOTICE' && message.trailing.startsWith(match))) {
         client.moderators = message.trailing.slice(match.length).split(', ')
         client.emit('mods', client.moderators)
       }

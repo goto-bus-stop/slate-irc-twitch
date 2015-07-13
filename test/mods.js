@@ -56,7 +56,7 @@ describe('Moderators', function () {
     it('emits a "mods" event when Twitch replies', done => {
       let stream = PassThrough()
       let client = irc(stream)
-      client.use(twitch())
+      client.use(twitch({ tags: false }))
 
       client.on('mods', mods => {
         deepEqual(mods, [ 'me', 'myself', 'i' ])
@@ -65,7 +65,7 @@ describe('Moderators', function () {
 
       stream.on('data', line => {
         if (line === 'PRIVMSG #channel :.mods\r\n') {
-          stream.write(':jtv!jtv@jtv.tmi.twitch.tv PRIVMSG test_nick ' +
+          stream.write(':tmi.twitch.tv NOTICE #channel ' +
                        ':The moderators of this room are: me, myself, i\r\n')
         }
       })
