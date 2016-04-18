@@ -22,7 +22,8 @@
     "babel-cli": "^6.7.5",
     "babel-preset-es2015-node4": "^2.1.0",
     "babel-register": "^6.7.2",
-    "mocha": "^2.4.5"
+    "mocha": "^2.4.5",
+    "slate-irc": "^0.8.1"
   },
   "scripts": {
     "prepublish": "npm run build",
