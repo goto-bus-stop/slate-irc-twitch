@@ -13,7 +13,7 @@
   "author": "goto-bus-stop <rene@kooi.me>",
   "main": "lib/twitch",
   "dependencies": {
-    "object-assign": "2.x"
+    "object-assign": "^4.0.1"
   },
   "peerDependencies": {
     "slate-irc": "^0.8.1"
