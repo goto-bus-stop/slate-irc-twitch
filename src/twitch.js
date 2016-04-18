@@ -1,6 +1,6 @@
-import assign from 'object-assign'
+const assign = require('object-assign')
 
-export default function (opts = {}) {
+module.exports = function (opts = {}) {
 
   const match = opts.match || 'The moderators of this room are: '
 
