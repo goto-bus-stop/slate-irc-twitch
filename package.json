@@ -1,20 +1,32 @@
-{ "name": "slate-irc-twitch"
-, "version": "1.2.1"
-, "description": "Twitch commands plugin for slate-irc."
-, "license": "MIT"
-, "keywords": [ "slate-irc", "twitch", "irc" ]
-, "repository": "goto-bus-stop/slate-irc-twitch"
-, "bugs": "https://github.com/goto-bus-stop/slate-irc-twitch/issues"
-, "author": "goto-bus-stop <rene@kooi.me>"
-, "main": "lib/twitch"
-, "dependencies":
-  { "object-assign": "2.x" }
-, "peerDependencies":
-  { "slate-irc": "^0.8.1" }
-, "devDependencies":
-  { "babel": "*"
-  , "mocha": "*" }
-, "scripts":
-  { "babel": "./node_modules/.bin/babel --out-dir lib src"
-  , "test": "./node_modules/.bin/mocha --compilers js:babel/register" }
+{
+  "name": "slate-irc-twitch",
+  "version": "1.2.1",
+  "description": "Twitch commands plugin for slate-irc.",
+  "license": "MIT",
+  "keywords": [
+    "slate-irc",
+    "twitch",
+    "irc"
+  ],
+  "repository": "goto-bus-stop/slate-irc-twitch",
+  "bugs": "https://github.com/goto-bus-stop/slate-irc-twitch/issues",
+  "author": "goto-bus-stop <rene@kooi.me>",
+  "main": "lib/twitch",
+  "dependencies": {
+    "object-assign": "2.x"
+  },
+  "peerDependencies": {
+    "slate-irc": "^0.8.1"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.7.5",
+    "babel-preset-es2015-node4": "^2.1.0",
+    "babel-register": "^6.7.2",
+    "mocha": "^2.4.5"
+  },
+  "scripts": {
+    "prepublish": "npm run build",
+    "build": "babel --out-dir lib src",
+    "test": "mocha --compilers js:babel-register"
+  }
 }
