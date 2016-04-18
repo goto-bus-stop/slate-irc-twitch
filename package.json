@@ -12,6 +12,9 @@
   "bugs": "https://github.com/goto-bus-stop/slate-irc-twitch/issues",
   "author": "goto-bus-stop <rene@kooi.me>",
   "main": "lib/twitch",
+  "engines": {
+    "node": ">= 4"
+  },
   "dependencies": {
     "object-assign": "^4.0.1"
   },
