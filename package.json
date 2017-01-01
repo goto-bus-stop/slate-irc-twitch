@@ -4,9 +4,14 @@
   "description": "Twitch commands plugin for slate-irc.",
   "license": "MIT",
   "keywords": [
+    "bot",
+    "chat",
+    "irc",
     "slate-irc",
+    "stream",
+    "tmi",
     "twitch",
-    "irc"
+    "twitch.tv"
   ],
   "repository": "goto-bus-stop/slate-irc-twitch",
   "bugs": "https://github.com/goto-bus-stop/slate-irc-twitch/issues",
