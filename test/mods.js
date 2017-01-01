@@ -1,12 +1,11 @@
+/* global describe, it */
 const { PassThrough } = require('stream')
 const { strictEqual, deepEqual } = require('assert')
 const irc = require('slate-irc')
 const twitch = require('../src/twitch')
 
 describe('Moderators', function () {
-
   describe('mod', () => {
-
     it('sends a .mod privmsg to Twitch', done => {
       let stream = PassThrough()
       let client = irc(stream)
@@ -19,11 +18,9 @@ describe('Moderators', function () {
 
       client.mod('#channel', 'helpful_user')
     })
-
   })
 
   describe('unmod', () => {
-
     it('sends a .unmod privmsg to Twitch', done => {
       let stream = PassThrough()
       let client = irc(stream)
@@ -39,7 +36,6 @@ describe('Moderators', function () {
   })
 
   describe('mods', () => {
-
     it('sends a .mods privmsg to Twitch', done => {
       let stream = PassThrough()
       let client = irc(stream)
@@ -71,9 +67,6 @@ describe('Moderators', function () {
       })
 
       client.mods('#channel')
-
     })
-
   })
-
 })

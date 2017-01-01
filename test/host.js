@@ -1,12 +1,11 @@
+/* global describe, it */
 const { PassThrough } = require('stream')
 const { strictEqual } = require('assert')
 const irc = require('slate-irc')
 const twitch = require('../src/twitch')
 
 describe('Stream hosting', function () {
-
   describe('host', () => {
-
     it('sends a .host privmsg to Twitch', done => {
       let stream = PassThrough()
       let client = irc(stream)
@@ -19,11 +18,9 @@ describe('Stream hosting', function () {
 
       client.host('#channel', 'channel_2')
     })
-
   })
 
   describe('unhost', () => {
-
     it('sends a .unhost privmsg to Twitch', done => {
       let stream = PassThrough()
       let client = irc(stream)
@@ -36,7 +33,5 @@ describe('Stream hosting', function () {
 
       client.unhost('#channel')
     })
-
   })
-
 })

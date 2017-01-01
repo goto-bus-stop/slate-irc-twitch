@@ -1,12 +1,11 @@
+/* global describe, it */
 const { PassThrough } = require('stream')
 const { strictEqual } = require('assert')
 const irc = require('slate-irc')
 const twitch = require('../src/twitch')
 
 describe('Commercials', function () {
-
   describe('commercial', () => {
-
     it('sends a .commercial privmsg to Twitch', done => {
       let stream = PassThrough()
       let client = irc(stream)
@@ -32,7 +31,5 @@ describe('Commercials', function () {
 
       client.commercial('#channel')
     })
-
   })
-
 })

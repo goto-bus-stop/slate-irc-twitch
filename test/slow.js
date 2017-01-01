@@ -1,12 +1,11 @@
+/* global describe, it */
 const { PassThrough } = require('stream')
 const { strictEqual } = require('assert')
 const irc = require('slate-irc')
 const twitch = require('../src/twitch')
 
 describe('Slow Mode', function () {
-
   describe('slow', () => {
-
     it('sends a .slow privmsg to Twitch', done => {
       let stream = PassThrough()
       let client = irc(stream)
@@ -19,11 +18,9 @@ describe('Slow Mode', function () {
 
       client.slow('#channel')
     })
-
   })
 
   describe('slowoff', () => {
-
     it('sends a .slowoff privmsg to Twitch', done => {
       let stream = PassThrough()
       let client = irc(stream)
@@ -36,7 +33,5 @@ describe('Slow Mode', function () {
 
       client.slowoff('#channel')
     })
-
   })
-
 })
