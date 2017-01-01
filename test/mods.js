@@ -1,7 +1,7 @@
-import { PassThrough } from 'stream'
-import { strictEqual, deepEqual } from 'assert'
-import irc from 'slate-irc'
-import twitch from '../src/twitch'
+const { PassThrough } = require('stream')
+const { strictEqual, deepEqual } = require('assert')
+const irc = require('slate-irc')
+const twitch = require('../src/twitch')
 
 describe('Moderators', function () {
 

@@ -1,7 +1,7 @@
-import { PassThrough } from 'stream'
-import { strictEqual } from 'assert'
-import irc from 'slate-irc'
-import twitch from '../src/twitch'
+const { PassThrough } = require('stream')
+const { strictEqual } = require('assert')
+const irc = require('slate-irc')
+const twitch = require('../src/twitch')
 
 describe('Slow Mode', function () {
 
